@@ -8,7 +8,7 @@ const App = () => {
     <div className="App">
       <header className="App-header">
         <div className="root-frame">
-          <img src="connection-aware-image" className="responsive" alt="spider man" />
+          <img src="dpr-aware-image" className="responsive" alt="square box" />
         </div>
       </header>
     </div>

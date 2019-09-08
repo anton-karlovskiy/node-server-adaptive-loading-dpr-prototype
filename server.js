@@ -14,24 +14,9 @@ app.get('/ping', (req, res) => {
   res.send('pong');
 });
 
-app.get('/connection-aware-image', (req, res) => {
-  let url;
-  console.log('[server connection-aware-image request] Effective Connection Type => ', req.headers.ect);
-  switch(req.headers.ect) {
-    case 'slow-2g':
-    case '2g':
-      url = "https://cdn.glitch.com/8d7fb7f0-a9be-4a8c-96c7-8af286af487e%2Fmin-res.jpg?v=1562842586912";
-      break;
-    case '3g':
-      url = "https://cdn.glitch.com/8d7fb7f0-a9be-4a8c-96c7-8af286af487e%2Fmedium-res.jpg?v=1562842587169";
-      break;
-    case '4g':
-      url = "https://cdn.glitch.com/8d7fb7f0-a9be-4a8c-96c7-8af286af487e%2Fmax-res.jpg?v=1562842587982";
-      break;
-    default:
-      url = "https://cdn.glitch.com/8d7fb7f0-a9be-4a8c-96c7-8af286af487e%2Fmax-res.jpg?v=1562842587982";
-      break;
-  }
+app.get('/dpr-aware-image', (req, res) => {
+  const dpr = req.headers.dpr;
+  const url = `https://via.placeholder.com/${dpr * 400}/92c952`
   const requestSettings = {
     url,
     method: 'GET',
