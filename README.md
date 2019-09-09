@@ -14,3 +14,16 @@ npm install
 npm run build
 npm run start-node
 ```
+
+## Deployment
+[Here](https://server-adaptive-loading-dpr.firebaseapp.com/)
+
+### deploy functions
+```
+npm run deploy-functions
+```
+
+### deploy app
+```
+npm run deploy-app
+```
