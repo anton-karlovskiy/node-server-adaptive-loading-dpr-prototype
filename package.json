@@ -11,7 +11,8 @@
     "request": "^2.88.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start-dev": "react-scripts start",
+    "start": "node server.js",
     "start-node": "nodemon server.js",
     "build": "react-scripts build && cd functions && rm -rf build && mkdir build && cd .. && cp -r build/* ./functions/build",
     "deploy-functions": "firebase deploy",
